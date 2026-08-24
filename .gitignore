@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Local secrets — never commit
+scripts/.env
+.env
+.env.local
+
+# Tooling caches
+.phpunit.cache/
+.phpunit.result.cache
+*.log
+.DS_Store
+dist/
+
+# Editor
+.idea/
+.vscode/
+*.swp
