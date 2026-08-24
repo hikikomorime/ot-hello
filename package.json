@@ -1,0 +1,31 @@
+{
+  "name": "ot-hello",
+  "version": "0.1.2",
+  "private": true,
+  "description": "OT Hello — modern OneThird WordPress plugin",
+  "scripts": {
+    "dev": "vite --config vite.config.ts --host 0.0.0.0 --port 43217",
+    "build": "vite build --config vite.config.ts",
+    "preview": "vite --config vite.config.ts --host 0.0.0.0 --port 43217",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "verify-php": "php scripts/verify-php.php",
+    "test:php": "vendor/bin/phpunit --colors=always",
+    "i18n": "node scripts/i18n-check.mjs",
+    "archive-release": "npm run build && node scripts/archive-release.mjs",
+    "deploy-update": "node scripts/deploy-update.mjs",
+    "pre-release": "npm run verify-php && npm run test:php && npm run typecheck && npm run build && npm run i18n && npm run archive-release"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11"
+  }
+}
