@@ -1,0 +1,25 @@
+.ot-hello-greeting {
+  font-family: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  background: #ffffff;
+  color: #242424;
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #5b5fc7;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  max-width: 40rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.ot-hello-greeting__message {
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #242424;
+}
+
+.ot-hello-greeting__meta {
+  margin: 0.4rem 0 0;
+  font-size: 0.875rem;
+  color: #616161;
+}
