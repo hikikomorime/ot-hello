@@ -1,0 +1,50 @@
+# Copyright (C) 2026 Michael Skweres | OneThird
+# This file is distributed under the same license as the OT Hello plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: OT Hello 0.1.2\n"
+"Report-Msgid-Bugs-To: https://onethird.pl\n"
+"POT-Creation-Date: 2026-08-22 18:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "OT Hello"
+msgstr ""
+
+msgid "Hello"
+msgstr ""
+
+msgid "You do not have permission to access this page."
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "Save changes"
+msgstr ""
+
+msgid "Saving…"
+msgstr ""
+
+msgid "Settings saved."
+msgstr ""
+
+msgid "Try again"
+msgstr ""
+
+msgid "You are not allowed to manage OT Hello."
+msgstr ""
+
+#. translators: 1: site name, 2: plugin version
+msgid "Served by %1$s · OT Hello %2$s"
+msgstr ""
