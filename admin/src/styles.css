@@ -1,0 +1,481 @@
+:root {
+  --ot-hello-brand: #5b5fc7;
+  --ot-hello-brand-hover: #4f52b2;
+  --ot-hello-brand-fg: #ffffff;
+  --ot-hello-brand-soft: #e8ebfa;
+  --ot-hello-brand-soft-fg: #2f3176;
+  --ot-hello-surface: #f5f5f5;
+  --ot-hello-surface-fg: #242424;
+  --ot-hello-card: #ffffff;
+  --ot-hello-card-fg: #242424;
+  --ot-hello-muted: #f0f0f0;
+  --ot-hello-muted-fg: #616161;
+  --ot-hello-border: #e0e0e0;
+  --ot-hello-success: #0e7c3a;
+  --ot-hello-success-bg: #e7f6ec;
+  --ot-hello-success-fg: #0b5a2a;
+  --ot-hello-danger: #c50f1f;
+  --ot-hello-danger-bg: #fde7e9;
+  --ot-hello-danger-fg: #8b0b16;
+  --ot-hello-warning-bg: #fff4ce;
+  --ot-hello-warning-fg: #6d5700;
+  --ot-hello-info: #0078d4;
+  --ot-hello-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --ot-hello-radius: 8px;
+  --ot-hello-font: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  --ot-hello-nav-width: 220px;
+}
+
+.ot-hello-app,
+.ot-hello-app * {
+  box-sizing: border-box;
+}
+
+.ot-hello-app {
+  font-family: var(--ot-hello-font);
+  color: var(--ot-hello-surface-fg);
+  background: var(--ot-hello-surface);
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+body:has(.ot-hello-preview-root) {
+  margin: 0;
+  background: var(--ot-hello-surface);
+}
+
+.wrap.ot-hello-admin-wrap {
+  margin: 0 0 0 -20px;
+  padding: 0;
+}
+
+@media (max-width: 782px) {
+  .wrap.ot-hello-admin-wrap {
+    margin-left: -10px;
+  }
+}
+
+.ot-hello-shell {
+  display: grid;
+  grid-template-columns: var(--ot-hello-nav-width) minmax(0, 1fr);
+  min-height: calc(100vh - 32px);
+}
+
+.ot-hello-topbar {
+  display: none;
+}
+
+.ot-hello-nav {
+  background: var(--ot-hello-card);
+  border-right: 1px solid var(--ot-hello-border);
+  padding: 1.25rem 0.85rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ot-hello-brand {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.35rem 0.5rem 0.85rem;
+}
+
+.ot-hello-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--ot-hello-brand);
+  color: var(--ot-hello-brand-fg);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex: none;
+}
+
+.ot-hello-brand h1 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ot-hello-card-fg);
+}
+
+.ot-hello-brand p {
+  margin: 0.15rem 0 0;
+  font-size: 0.75rem;
+  color: var(--ot-hello-muted-fg);
+}
+
+.ot-hello-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: var(--ot-hello-brand-soft);
+  color: var(--ot-hello-brand-soft-fg);
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.35rem;
+}
+
+.ot-hello-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ot-hello-nav-btn,
+.ot-hello-btn,
+.ot-hello-select,
+.ot-hello-input {
+  font-family: inherit;
+}
+
+.ot-hello-nav-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ot-hello-card-fg);
+  text-align: left;
+  padding: 0.55rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.925rem;
+  font-weight: 600;
+}
+
+.ot-hello-nav-btn:hover {
+  background: var(--ot-hello-muted);
+}
+
+.ot-hello-nav-btn:focus-visible {
+  outline: 2px solid var(--ot-hello-brand);
+  outline-offset: 2px;
+}
+
+.ot-hello-nav-btn.is-active {
+  background: var(--ot-hello-brand-soft);
+  color: var(--ot-hello-brand-soft-fg);
+}
+
+.ot-hello-nav-footer {
+  margin-top: auto;
+  padding: 0.75rem 0.5rem 0;
+  border-top: 1px solid var(--ot-hello-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.ot-hello-nav-footer label {
+  font-size: 0.75rem;
+  color: var(--ot-hello-muted-fg);
+  font-weight: 600;
+}
+
+.ot-hello-select,
+.ot-hello-input {
+  width: 100%;
+  border: 1px solid var(--ot-hello-border);
+  background: var(--ot-hello-card);
+  color: var(--ot-hello-card-fg);
+  border-radius: 6px;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.925rem;
+}
+
+.ot-hello-select:focus,
+.ot-hello-input:focus {
+  outline: 2px solid var(--ot-hello-brand);
+  outline-offset: 1px;
+  border-color: var(--ot-hello-brand);
+}
+
+.ot-hello-main {
+  padding: 1.5rem 1.75rem 2.5rem;
+  min-width: 0;
+}
+
+.ot-hello-page-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.ot-hello-lede {
+  margin: 0 0 1.25rem;
+  color: var(--ot-hello-muted-fg);
+  max-width: 46rem;
+  line-height: 1.5;
+}
+
+.ot-hello-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.ot-hello-card {
+  background: var(--ot-hello-card);
+  color: var(--ot-hello-card-fg);
+  border: 1px solid var(--ot-hello-border);
+  border-radius: var(--ot-hello-radius);
+  box-shadow: var(--ot-hello-shadow);
+  padding: 1.1rem 1.2rem 1.2rem;
+}
+
+.ot-hello-span-8 { grid-column: span 8; }
+.ot-hello-span-4 { grid-column: span 4; }
+.ot-hello-span-6 { grid-column: span 6; }
+.ot-hello-span-12 { grid-column: span 12; }
+
+.ot-hello-card a {
+  color: var(--ot-hello-brand);
+}
+
+.ot-hello-card h2,
+.ot-hello-card h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1rem;
+}
+
+.ot-hello-greeting-hero {
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0.15rem 0 0.5rem;
+  color: var(--ot-hello-brand-soft-fg);
+}
+
+.ot-hello-meta-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.ot-hello-meta-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--ot-hello-border);
+  padding-bottom: 0.45rem;
+}
+
+.ot-hello-meta-list span {
+  color: var(--ot-hello-muted-fg);
+}
+
+.ot-hello-steps {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.ot-hello-steps article h3 {
+  margin: 0 0 0.25rem;
+}
+
+.ot-hello-steps article p {
+  margin: 0;
+  color: var(--ot-hello-muted-fg);
+  font-size: 0.925rem;
+  line-height: 1.45;
+}
+
+.ot-hello-btn {
+  appearance: none;
+  border: 1px solid transparent;
+  background: var(--ot-hello-brand);
+  color: var(--ot-hello-brand-fg);
+  border-radius: 6px;
+  padding: 0.55rem 0.95rem;
+  font-size: 0.925rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ot-hello-btn:hover:not(:disabled) {
+  background: var(--ot-hello-brand-hover);
+}
+
+.ot-hello-btn:focus-visible {
+  outline: 2px solid var(--ot-hello-brand);
+  outline-offset: 2px;
+}
+
+.ot-hello-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.ot-hello-btn--secondary {
+  background: var(--ot-hello-card);
+  color: var(--ot-hello-card-fg);
+  border-color: var(--ot-hello-border);
+}
+
+.ot-hello-btn--secondary:hover:not(:disabled) {
+  background: var(--ot-hello-muted);
+}
+
+.ot-hello-field {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.ot-hello-field label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.ot-hello-help {
+  margin: 0;
+  color: var(--ot-hello-muted-fg);
+  font-size: 0.8rem;
+}
+
+.ot-hello-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-weight: 600;
+  font-size: 0.925rem;
+}
+
+.ot-hello-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.ot-hello-banner {
+  border-radius: 6px;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.ot-hello-banner--ok {
+  background: var(--ot-hello-success-bg);
+  color: var(--ot-hello-success-fg);
+}
+
+.ot-hello-banner--err {
+  background: var(--ot-hello-danger-bg);
+  color: var(--ot-hello-danger-fg);
+}
+
+.ot-hello-banner--warn {
+  background: var(--ot-hello-warning-bg);
+  color: var(--ot-hello-warning-fg);
+}
+
+.ot-hello-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  background: var(--ot-hello-muted);
+  color: var(--ot-hello-card-fg);
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+}
+
+.ot-hello-skeleton {
+  height: 1rem;
+  background: linear-gradient(90deg, var(--ot-hello-muted), #fafafa, var(--ot-hello-muted));
+  background-size: 200% 100%;
+  animation: ot-hello-shimmer 1.2s linear infinite;
+  border-radius: 4px;
+}
+
+.ot-hello-skeleton--lg {
+  height: 2.4rem;
+  width: 70%;
+  margin-bottom: 0.75rem;
+}
+
+@keyframes ot-hello-shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ot-hello-skeleton {
+    animation: none;
+  }
+}
+
+.ot-hello-empty {
+  color: var(--ot-hello-muted-fg);
+}
+
+.ot-hello-help-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.ot-hello-help-list h3 {
+  margin: 0 0 0.25rem;
+}
+
+.ot-hello-help-list p {
+  margin: 0;
+  color: var(--ot-hello-muted-fg);
+  line-height: 1.45;
+}
+
+.ot-hello-features {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+@media (max-width: 960px) {
+  .ot-hello-span-8,
+  .ot-hello-span-4,
+  .ot-hello-span-6 {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 782px) {
+  .ot-hello-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .ot-hello-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: var(--ot-hello-card);
+    border-bottom: 1px solid var(--ot-hello-border);
+  }
+
+  .ot-hello-nav {
+    display: none;
+    position: absolute;
+    z-index: 20;
+    top: 3.25rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    border: 1px solid var(--ot-hello-border);
+    border-radius: var(--ot-hello-radius);
+    box-shadow: var(--ot-hello-shadow);
+  }
+
+  .ot-hello-nav.is-open {
+    display: flex;
+  }
+
+  .ot-hello-main {
+    padding: 1.15rem 1rem 2rem;
+  }
+}
