@@ -1,4 +1,9 @@
-# Dependencies
+# Plugin artifacts are tracked on purpose — do not ignore:
+#   backups/*.zip, build/, composer.lock, package-lock.json, languages/*.mo
+#
+# Only exclude secrets, installable dependencies, and local caches.
+
+# Dependencies (regenerate with npm install / composer install)
 node_modules/
 vendor/
 
@@ -12,6 +17,8 @@ scripts/.env
 .phpunit.result.cache
 *.log
 .DS_Store
+
+# Local zip staging (the installable ZIP lives in backups/)
 dist/
 
 # Editor
